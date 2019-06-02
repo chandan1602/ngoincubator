@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+    <head><script type="text/javascript" src="https://embed.modernapp.co/chat?code=a2c6072f98d2cca06a05919ccfa8ba6e"></script></head>
+   
+
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Dilip kumar sharma">
+    <link rel="shortcut icon" href="/assets/ico/favicon.ico">
+
+    <title>YANTRIX - Face Recognition</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+      <script src="https://use.fontawesome.com/5403bd8368.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        #map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+        }
+    </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109249535-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109249535-1');
+</script>
+
+    
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+    <body>
+        <!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">YANTRIX</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">HOME</a></li>
+        <li ><a href="/blog/">BLOG</a></li>
+        <!-- <li ><a href="/portfolio/">PORTFOLIO</a></li> -->
+        <li ><a href="/about/">ABOUT</a></li>
+        <li ><a href="/contact/">CONTACT</a></li>
+        <li ><a href="/registration/">REGISTRATION</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+
+            <!--<div id="blue">
+    <div class="container">
+        <div class="row">
+            <center><h3>Face Recognition</h3></center>
+        </div> --><!-- /row -->
+  <!--  </div> --><!-- /container -->
+<!--</div> --><!-- /blue -->
+
+
+<div class="container mt">
+    <div class="row">
+
+        <div class="col-lg-10 col-lg-offset-1 centered">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            
+                <li data-target="#carousel-example-generic" data-slide-to="0" 
+                
+                    class="active"
+                >
+                </li>
+            
+                <li data-target="#carousel-example-generic" data-slide-to="1" 
+                >
+                </li>
+            
+                <li data-target="#carousel-example-generic" data-slide-to="2" 
+                >
+                </li>
+            
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            
+                <div class="item active">
+                    <img src="/assets/img/project/carousel/single01.jpg" alt="">
+                </div>
+            
+            
+                <div class="item">
+                    <img src="/assets/img/project/carousel/single02.jpg" alt="">
+                </div>
+            
+                <div class="item">
+                    <img src="/assets/img/project/carousel/single03.jpg" alt="">
+                </div>
+            
+        </div>
+    </div> <!--/Carousel -->
+</div>
+
+
+        <div class="col-lg-5 col-lg-offset-1">
+            <div class="spacing"></div>
+
+            <h1 id="face-recognition-using-k-nearest-neighbors">Face Recognition using K-Nearest Neighbors</h1>
+
+<p><strong>Packages Used:-</strong></p>
+<ul>
+  <li>Python 2.7</li>
+  <li>Numpy, SciPy</li>
+  <li>Mathplotlib</li>
+  <li>OpenCV Python
+    <h2 id="the-k-nearest-neighbourssupervised-learning-algorithm-code">The K-Nearest Neighbours(Supervised Learning) Algorithm Code</h2>
+    <h3 id="record_facespy">record_faces.py</h3>
+    <p>```python
+import numpy as np
+import cv2</p>
+  </li>
+</ul>
+
+<h1 id="instantiate-a-camera-object-to-capture-images">instantiate a camera object to capture images</h1>
+<p>cam = cv2.VideoCapture(1)</p>
+
+<h1 id="create-a-haar-cascade-object-for-face-detection">create a haar-cascade object for face detection</h1>
+<p>face_cas = cv2.CascadeClassifier(‘./haarcascade_frontalface_default.xml’)</p>
+
+<h1 id="create-a-placeholder-for-storing-the-data">create a placeholder for storing the data</h1>
+<p>data = []
+ix = 0	# current frame number</p>
+
+<p>while True:
+	# retrieve the ret (boolean) and frame from camera
+	ret, frame = cam.read()</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># if the camera is working fine, we proceed to extract the face
+if ret == True:
+	# convert the current frame to grayscale
+	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+	# apply the haar cascade to detect faces in the current frame
+	# the other parameters 1.3 and 5 are fine tuning parameters
+	# for the haar cascade object
+	faces = face_cas.detectMultiScale(gray, 1.3, 5)
+
+	# for each face object we get, we have
+	# the corner coords (x, y)
+	# and the width and height of the face
+	for (x, y, w, h) in faces:
+
+		# get the face component from the image frame
+		face_component = frame[y:y+h, x:x+w, :]
+
+		# resize the face image to 50X50X3
+		fc = cv2.resize(face_component, (50, 50))
+
+		# store the face data after every 10 frames
+		# only if the number of entries is less than 20
+		if ix%10 == 0 and len(data) &lt; 20:
+			data.append(fc)
+
+		# for visualization, draw a rectangle around the face
+		# in the image
+		cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+	ix += 1	# increment the current frame number
+	cv2.imshow('frame', frame)	# display the frame
+
+	# if the user presses the escape key (ID: 27)
+	# or the number of images hits 20, we stop
+	# recording.
+	if cv2.waitKey(1) == 27 or len(data) &gt;= 20:
+		break
+else:
+	# if the camera is not working, print "error"
+	print "error"
+</code></pre></div></div>
+
+<h1 id="now-we-destroy-the-windows-we-have-created">now we destroy the windows we have created</h1>
+<p>cv2.destroyAllWindows()</p>
+
+<h1 id="convert-the-data-to-a-numpy-format">convert the data to a numpy format</h1>
+<p>data = np.asarray(data)</p>
+
+<h1 id="print-the-shape-as-a-sanity-check">print the shape as a sanity-check</h1>
+<p>print data.shape</p>
+
+<h1 id="save-the-data-as-a-numpy-matrix-in-an-encoded-format">save the data as a numpy matrix in an encoded format</h1>
+<p>np.save(‘face_03’, data)</p>
+
+<h1 id="well-run-the-script-for-different-people-and-store">We’ll run the script for different people and store</h1>
+<h1 id="the-data-into-multiple-files">the data into multiple files</h1>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### FaceRec.py
+```python
+import numpy as np
+import cv2
+
+# instantiate the camera object and haar cascade
+cam = cv2.VideoCapture(1)
+face_cas = cv2.CascadeClassifier('./haarcascade_frontalface_default.xml')
+
+# declare the type of font to be used on output window
+font = cv2.FONT_HERSHEY_SIMPLEX
+
+# load the data from the numpy matrices and convert to linear vectors
+f_01 = np.load('face_01.npy').reshape((20, 50*50*3))	# Shubham
+f_02 = np.load('face_02.npy').reshape((20, 50*50*3))	# Prateek
+f_03 = np.load('face_03.npy').reshape((20, 50*50*3))	# Laksh
+
+print f_01.shape, f_02.shape, f_03.shape
+
+# create a look-up dictionary
+names = {
+	0: 'Shubham',
+	1: 'Prateek', 
+	2: 'Laksh',
+}
+
+# create a matrix to store the labels
+labels = np.zeros((60, 1))
+labels[:20, :] = 0.0	# first 20 for shubham (0)
+labels[20:40, :] = 1.0	# next 20 for prateek (1)
+labels[40:, :] = 2.0	# last 20 for laksh (2)
+
+# combine all info into one data array
+data = np.concatenate([f_01, f_02, f_03])	# (60, 7500)
+print data.shape, labels.shape	# (60, 1)
+
+# the distance and knn functions we defined earlier
+def distance(x1, x2):
+    return np.sqrt(((x1-x2)**2).sum())
+
+def knn(x, train, targets, k=5):
+    m = train.shape[0]
+    dist = []
+    for ix in range(m):
+        # compute distance from each point and store in dist
+        dist.append(distance(x, train[ix]))
+    dist = np.asarray(dist)
+    indx = np.argsort(dist)
+    sorted_labels = labels[indx][:k]
+    counts = np.unique(sorted_labels, return_counts=True)
+    return counts[0][np.argmax(counts[1])]
+
+while True:
+	# get each frame
+	ret, frame = cam.read()
+
+	if ret == True:
+		# convert to grayscale and get faces
+		gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+		faces = face_cas.detectMultiScale(gray, 1.3, 5)
+
+		# for each face
+		for (x, y, w, h) in faces:
+			face_component = frame[y:y+h, x:x+w, :]
+			fc = cv2.resize(face_component, (50, 50))
+
+			# after processing the image and rescaling
+			# convert to linear vector using .flatten()
+			# and pass to knn function along with all the data
+
+			lab = knn(fc.flatten(), data, labels)
+			# convert this label to int and get the corresponding name
+			text = names[int(lab)]
+
+			# display the name
+			cv2.putText(frame, text, (x, y), font, 1, (255, 255, 0), 2)
+
+			# draw a rectangle over the face
+			cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
+		cv2.imshow('face recognition', frame)
+
+		if cv2.waitKey(1) == 27:
+			break
+	else:
+		print 'Error'
+
+cv2.destroyAllWindows()
+</code></pre></div></div>
+
+		
+		<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://yantrix.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+		
+		
+		
+		
+		
+
+        </div>
+        <div class="col-lg-4 col-lg-offset-1">
+            <div class="spacing"></div>
+            <h4>Project Details</h4>
+            <div class="hline"></div>
+            <p><b>Date:</b> Aug 15, 2017</p>
+            <p><b>Author:</b> Rahul Kumar</p>
+            <p><b>Categories:</b> project</p>
+            <p><b>Tagged:</b> Machine Learning</p>
+            <p><b>Website:</b> <a href="https://www.linkedin.com/in/rahul10-pu">https://www.linkedin.com/in/rahul10-pu</a></p>
+        </div>
+    </div><! --/row -->
+</div><! --/container -->
+	 
+<div id="portfoliowrap">
+    <div class="portfolio-centered">
+        <h3>Related Works.</h3>
+        <div class="recentitems portfolio">
+            
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+                    <img src="/assets/img/project/portfolio_03.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">YOUR PROJECT NAME</h3>
+                                <a data-rel="prettyPhoto" href="/assets/img/project/portfolio_03.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="/projects/your-project-name/" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+            
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+                    <img src="/assets/img/project/portfolio_02.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">YOUR PROJECT NAME</h3>
+                                <a data-rel="prettyPhoto" href="/assets/img/project/portfolio_02.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="/projects/your-project-name/" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+            
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+                    <img src="/assets/img/project/portfolio_01.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Face Recognition</h3>
+                                <a data-rel="prettyPhoto" href="/assets/img/project/portfolio_01.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="/projects/face-recognition-using-k-nearest-neighbors/" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+            
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+                    <img src="/assets/img/project/portfolio_04.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">CPP LAB CODE</h3>
+                                <a data-rel="prettyPhoto" href="/assets/img/project/portfolio_04.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="/projects/24-08-2017-CPP-LAB-CODE/" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+            
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+                    <img src="/assets/img/project/portfolio_08.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Yantrix Website</h3>
+                                <a data-rel="prettyPhoto" href="/assets/img/project/portfolio_08.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="/projects/24-08-2017-YANTRIX/" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+            
+        </div><!-- portfolio -->
+    </div><!-- portfolio container -->
+</div><!--/Portfoliowrap -->
+
+
+
+        <div id="footerwrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h4>About</h4>
+                <div class="hline-w"></div>
+                <p>YANTRIX is the official technical Club of Punjab University SSG REGIONAL CENTER,Hoshiarpur.</p>
+            </div>
+            <div class="col-lg-4">
+                <h4>Social Links</h4>
+                <div class="hline-w"></div>
+                <p>
+                    
+                        <a href="https://github.com/pussgrc/" class="btn-social btn-outline">
+                          <i class="fa fa-github" aria-hidden="true"></i>
+                          <span class="sr-only">github</span>
+                        </a>
+                    
+                        <a href="https://www.facebook.com/yantrixUIETH/" class="btn-social btn-outline">
+                          <i class="fa fa-facebook" aria-hidden="true"></i>
+                          <span class="sr-only">facebook</span>
+                        </a>
+                    
+                        <a href="" class="btn-social btn-outline">
+                          <i class="fa fa-twitter" aria-hidden="true"></i>
+                          <span class="sr-only">twitter</span>
+                        </a>
+                    
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h4>Our Bunker</h4>
+                <div class="hline-w"></div>
+                <p>
+                    
+                        PUSSGRC, UNA ROAD, BAJWARA. <br>
+                    
+                        HOSHIARPUR, 146023 <br>
+                    
+                        PUNJAB,INDIA. <br>
+                    
+                </p>
+            </div>
+        </div><! --/row -->
+        <center>
+            <h4 style="color:white;"><a style="color:white;" href="http://www.platform.net.in" target="_blank">
+                 <img src="/assets/platform logo.png" alt="platform logo" class="img img-responsive" style="margin-bottom:2px;"/>Platform &copy; Web-Development</a></h4> 
+        </center>
+    </div><! --/container -->
+</div><! --/footerwrap -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/retina-1.1.0.js"></script>
+<script src="/assets/js/jquery.hoverdir.js"></script>
+<script src="/assets/js/jquery.hoverex.min.js"></script>
+<script src="/assets/js/jquery.prettyPhoto.js"></script>
+<script src="/assets/js/jquery.isotope.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104964578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script>
+// Portfolio
+(function($) {
+	"use strict";
+	var $container = $('.portfolio'),
+		$items = $container.find('.portfolio-item'),
+		portfolioLayout = 'fitRows';
+		
+		if( $container.hasClass('portfolio-centered') ) {
+			portfolioLayout = 'masonry';
+		}
+				
+		$container.isotope({
+			filter: '*',
+			animationEngine: 'best-available',
+			layoutMode: portfolioLayout,
+			animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		},
+		masonry: {
+		}
+		}, refreshWaypoints());
+		
+		function refreshWaypoints() {
+			setTimeout(function() {
+			}, 1000);   
+		}
+				
+		$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+		});
+		
+		function getColumnNumber() { 
+			var winWidth = $(window).width(), 
+			columnNumber = 1;
+		
+			if (winWidth > 1200) {
+				columnNumber = 5;
+			} else if (winWidth > 950) {
+				columnNumber = 4;
+			} else if (winWidth > 600) {
+				columnNumber = 3;
+			} else if (winWidth > 400) {
+				columnNumber = 2;
+			} else if (winWidth > 250) {
+				columnNumber = 1;
+			}
+				return columnNumber;
+			}       
+			
+			function setColumns() {
+				var winWidth = $(window).width(), 
+				columnNumber = getColumnNumber(), 
+				itemWidth = Math.floor(winWidth / columnNumber);
+				
+				$container.find('.portfolio-item').each(function() { 
+					$(this).css( { 
+					width : itemWidth + 'px' 
+				});
+			});
+		}
+		
+		function setPortfolio() { 
+			setColumns();
+			$container.isotope('reLayout');
+		}
+			
+		$container.imagesLoaded(function () { 
+			setPortfolio();
+		});
+		
+		$(window).on('resize', function () { 
+		setPortfolio();          
+	});
+})(jQuery);
+</script>
+        
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59999003ba083d6f"></script> 
+       
+        
+    </body>
+</html>

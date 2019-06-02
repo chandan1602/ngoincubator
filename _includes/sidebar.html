@@ -1,0 +1,124 @@
+<div class="col-lg-4">
+   <!--  <h4>Search</h4>
+    <div class="hline"></div>
+        <p>
+            <br/>
+            <input type="text" class="form-control" placeholder="Search something">
+        </p>
+    <div class="spacing"></div> -->
+    <h4>Subscribe to our newsletter and stay Up-To-Date</h4>
+    <div class="hline"></div>
+   
+ <!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//github.us16.list-manage.com/subscribe/post?u=9d0fb0162bc2935c4c52cf99d&amp;id=6441e80107" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-NAME">Full Name  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="NAME" class="required" id="mce-NAME">
+</div>
+<div class="mc-field-group size1of2">
+	<label for="mce-ROLL">Roll No.  <span class="asterisk">*</span>
+</label>
+	<input type="number" name="ROLL" class="required" value="" id="mce-ROLL">
+</div>
+<div class="mc-field-group">
+	<label for="mce-BRANCH">Branch  <span class="asterisk">*</span>
+</label>
+	<select name="BRANCH" class="required" id="mce-BRANCH">
+	<option value=""></option>
+	<option value="CSE">CSE</option>
+<option value="IT">IT</option>
+<option value="ECE">ECE</option>
+<option value="ME">ME</option>
+
+	</select>
+</div>
+<div class="mc-field-group">
+	<label for="mce-YEAR">Year  <span class="asterisk">*</span>
+</label>
+	<select name="YEAR" class="required" id="mce-YEAR">
+	<option value=""></option>
+	<option value="1st">1st</option>
+<option value="2nd">2nd</option>
+<option value="3rd">3rd</option>
+<option value="4th">4th</option>
+
+	</select>
+</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div class="mc-field-group size1of2">
+	<label for="mce-CONTACT">Contact No.  <span class="asterisk">*</span>
+</label>
+	<input type="text" name="CONTACT" class="required" value="" id="mce-CONTACT">
+</div>
+<div class="mc-field-group">
+	<label for="mce-IMAGE">Image URL </label>
+	<input type="url" value="" name="IMAGE" class=" url" id="mce-IMAGE">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9d0fb0162bc2935c4c52cf99d_6441e80107" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='NAME';ftypes[1]='text';fnames[2]='ROLL';ftypes[2]='number';fnames[4]='BRANCH';ftypes[4]='dropdown';fnames[3]='YEAR';ftypes[3]='dropdown';fnames[0]='EMAIL';ftypes[0]='email';fnames[6]='CONTACT';ftypes[6]='phone';fnames[5]='IMAGE';ftypes[5]='imageurl';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+	
+	
+	
+   
+   
+   
+   
+   
+    <div class="spacing"></div>
+    <h4>Categories</h4>
+    <div class="hline"></div>
+    {% for category in site.categories %}
+        <p>
+            <a href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category | first }}"><i class="fa fa-angle-right"></i> {{ category | first | capitalize }}</a>
+            <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
+        </p>
+    {% endfor %}
+
+    <div class="spacing"></div>
+
+    <h4>Recent Posts</h4>
+    <div class="hline"></div>
+        <ul class="popular-posts">
+            {% for post in site.posts limit:4 %}
+                <li>
+                    <a href="{{ post.url  | prepend: site.baseurl }}"><img src="{{ "/assets/img/blog/thumbs/" | prepend: site.baseurl }}{{ post.thumb }}" alt="Popular Post"></a>
+                    <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+                <em>Posted on {{ post.date | date_to_string }}</em>
+            </li>
+            {% endfor %}
+        </ul>
+
+    <div class="spacing"></div>
+
+    <h4>Popular Tags</h4>
+    <div class="hline"></div>
+    <p>
+    {% for category in site.categories %}
+            <a class="btn btn-theme" href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category | first }}" role="button">{{ category | first | capitalize }} ({{ category | last | size }})</a>
+        {% endfor %}
+    </p>
+</div>

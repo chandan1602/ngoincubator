@@ -1,0 +1,31 @@
+---
+layout: project       #important: don't change this
+title:  "Yantrix Website"
+date: 2017-08-24 02:08:00
+author: Rahul Kumar, Dilip Kumar Sharma
+categories:
+- project             #important: leave this here
+img: portfolio_08.jpg #place image (600x450) with this name in /assets/img/project/
+thumb: thumb01.jpg
+carousel:        #place image (1280x600) with this name in /assets/img/project/carousel/
+- cpp1.jpg
+- cpp01.jpg
+- cpp02.jpg
+website: https://pussgrc.github.io
+---
+
+# YANTRIX WEBSITE
+
+In Yantrix Website Project we create advance Port-folio through jkeyll theme. This is Multi-Page semi Dynamic website.
+
+**There are Many features in this site as:** 
+
+   - Animated Home-Page
+   - Port-folio
+   - Blog
+   - Automated Email-Response
+   - Messenger and other supportive features
+
+ *For Any Query And suggestions Please contact us
+  Email: support@platform.net.in*
+

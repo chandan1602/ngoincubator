@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+    <head><script type="text/javascript" src="https://embed.modernapp.co/chat?code=a2c6072f98d2cca06a05919ccfa8ba6e"></script></head>
+   
+
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Dilip kumar sharma">
+    <link rel="shortcut icon" href="/assets/ico/favicon.ico">
+
+    <title>YANTRIX - All About Compiling And Running C Programs On Linux</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+      <script src="https://use.fontawesome.com/5403bd8368.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        #map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+        }
+    </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109249535-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109249535-1');
+</script>
+
+    
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+    <body>
+        <!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">YANTRIX</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">HOME</a></li>
+        <li ><a href="/blog/">BLOG</a></li>
+        <!-- <li ><a href="/portfolio/">PORTFOLIO</a></li> -->
+        <li ><a href="/about/">ABOUT</a></li>
+        <li ><a href="/contact/">CONTACT</a></li>
+        <li ><a href="/registration/">REGISTRATION</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+
+            <!--<div id="blue">
+    <div class="container">
+        <div class="row">
+            <center><h3>All About Compiling And Running C Programs On Linux</h3></center>
+        </div> --><!-- /row -->
+  <!--  </div> --><!-- /container -->
+<!--</div> --><!-- /blue -->
+
+
+<div class="container mtb">
+    <div class="row">
+        <! -- SINGLE POST -->
+        <div class="col-lg-8">
+            <! -- Blog Post  -->
+            <p><img class="img-responsive" src="/assets/img/blog/post03.jpg"></p>
+            <a href="/blog/c/All-about-compiling-and-running-C-programs-on-linux"><h3 class="ctitle">All About Compiling And Running C Programs On Linux</h3></a>
+            <p><csmall>Aug 19, 2017. | By: Admin</csmall></p>
+              
+            <p>Steps to Compile and Execute C Program in Linux Using GCC :–</p>
+
+<p>–&gt; Before talking of compiling and running C program in Linux let’s see why C is so popular ever since it was created. He was the Dennis Ritchie who developed C language in 1969 to 1973. C was developed from the beginning as the system programming language for UNIX. Most of the UNIX kernel,<!--more--> and all of its supporting tools and libraries, were written in C. Initially, C was designed to implement the UNIX operating system. Later other folks found it useful for their programs without any hindrance, and they began using it. Even today, C is the first choice for system-level programming.</p>
+
+<p>This tutorial explains compilation and execution of C program is in detail.</p>
+
+<p>Compile C Program in Linux - A Classic example Hello World! :–</p>
+
+<blockquote>
+  <p>#include <stdio.h>
+int main()
+{
+printf("hello, world!\n");
+}
+/* helloworld.c */</stdio.h></p>
+</blockquote>
+
+<p>—&gt; To compile and run this C program every part of the system has to perform in concert. In order to compile above C program in Linux, we will start right from the creation of the program. The ‘Hello World!’ program starts its life as a source file which is created with help of a text editor and saved as helloworld.c. The helloworld.c program code is stored in a file as a sequence of bytes. Each byte has a value corresponding to some character. The first byte has the value 35 that corresponds to the character ‘#’, for example. Likewise, the second byte has the integer value 105, which corresponds to the character ‘i’, and so on. The idea illustrates that all information in a system is represented as a bunch of bits.</p>
+
+<blockquote>
+  <p>To compile and run the C program helloworld.c, all C statements must be translated individually into a sequence of instructions that a machine can understand. These instructions are then packaged in a form called executable object program. There are other programs which perform this task to get the program running. On a UNIX/Linux system, the translation from source code to object code (executable) is performed by a compiler driver. Here we will compile C program by gcc.</p>
+</blockquote>
+
+<blockquote>
+  <p>The following command (provided that gcc is installed on your Linux box) compiles C program helloworld.c and creates an executable file called helloworld. Don’t forget to set appropriate permissions to helloworld.c, so that you won’t get execute permission errors.</p>
+</blockquote>
+
+<blockquote>
+  <p>[root@host ~]# gcc helloworld.c -o helloworld
+While compiling helloworld.c the gcc compiler reads the source file helloworld.c and translates it into an executable helloworld. The compilation is performed in four sequential phases by the compilation system (a collection of four programs - preprocessor, compiler, assembler, and linker).</p>
+</blockquote>
+
+<p><strong>Now, let’s perform all four steps to compile and run C program one by one.</strong></p>
+
+<p><img src="/assets/img/blog/compile.gif" alt="comile" /></p>
+
+<blockquote>
+  <ol>
+    <li>Preprocessing :—
+During compilation of a C program the compilation is started off with preprocessing the directives (e.g., #include and #define). The preprocessor (cpp - c preprocessor) is a separate program in reality, but it is invoked automatically by the compiler. For example, the #include <stdio.h> command in line 1 of helloworld.c tells the preprocessor to read the contents of the system header file stdio.h and insert it directly into the program text. The result is another file typically with the .i suffix. In practice, the preprocessed file is not saved to disk unless the -save-temps option is used.
+This is the first stage of compilation process where preprocessor directives (macros and header files are most common) are expanded. To perform this step gcc executes the following command internally.
+[root@host ~]# cpp helloworld.c &gt; helloworld.i
+The result is a file helloworld.i that contains the source code with all macros expanded. If you execute the above command in isolation then the file helloworld.i will be saved to disk and you can see its content by vi or any other editor you have on your Linux system.</stdio.h></li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <ol>
+    <li>Compilation :—
+In this phase compilation proper takes place. The compiler (ccl) translates helloworld.i into helloworld.s. File helloworld.s contains assembly code. You can explicitly tell gcc to translate helloworld.i to helloworld.s by executing the following command.
+[root@host ~]# gcc -S helloworld.i
+The command line option -S tells the compiler to convert the preprocessed code to assembly language without creating an object file. After having created helloworld.s you can see the content of this file. While looking at assembly code you may note that the assembly code contains a call to the external function printf.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <ol>
+    <li>Assembly :—
+Here, the assembler (as) translates helloworld.s into machine language instructions, and generates an object file helloworld.o. You can invoke the assembler at your own by executing the following command.
+[root@host ~]# as helloworld.s -o helloworld.o
+The above command will generate helloworld.o as it is specified with -o option. And, the resulting file contains the machine instructions for the classic “Hello World!” program, with an undefined reference to printf.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <ol>
+    <li>Linking :—
+This is the final stage in compilation of “Hello World!” program. This phase links object files to produce final executable file. An executable file requires many external resources (system functions, C run-time libraries etc.). Regarding our “Hello World!” program you have noticed that it calls the printf function to print the ‘Hello World!’ message on console. This function is contained in a separate pre compiled object file printf.o, which must somehow be merged with our helloworld.o file. The linker (ld) performs this task for you. Eventually, the resulting file helloworld is produced, which is an executable. This is now ready to be loaded into memory and executed by the system.
+[root@host ~]# ./helloworld
+Output:
+hello, world!</li>
+  </ol>
+</blockquote>
+
+<p>The entire linking process is handled transparently by gcc when invoked, as follows.</p>
+<blockquote>
+  <p>[root@host ~]# gcc helloworld.c -o helloworld</p>
+</blockquote>
+
+<p>During the whole compilation process there are other files also in role along with the source code file. If you see the very first statement of helloworld.c it is #include <stdio.h> (includes header file). Likewise, while compiling a C program you have to work with following types of files.</stdio.h></p>
+
+<p><strong>Program Translation :—</strong>
+*Source code files :—</p>
+<blockquote>
+  <p>These files contain high level program code which can be read and understood by programmers. Such files carry .c extension by convention.</p>
+</blockquote>
+
+<p>*Header files :—</p>
+<blockquote>
+  <p>These types of files contain function declarations (also known as function prototypes) and various preprocessor statements. They are used to allow source code files to access externally-defined functions. As a convention header files have .h extension.</p>
+</blockquote>
+
+<p>*Object files :—</p>
+<blockquote>
+  <p>These files are produced as an intermediate output by the gcc compiler during program compilation. They consist of function definitions in binary form, but they are not executable by themselves. Object files end with .o extension by convention (on UNIX like operating systems), although on some operating systems e.g., Windows, and MS-DOS they often end in .obj.</p>
+</blockquote>
+
+<p>*Binary executables :—</p>
+<blockquote>
+  <p>These are produced as the output of a program called a linker. During the process of compiling and running C program the linker links together a number of object files to produce a binary file which can be directly executed. Binary executables have no special suffix on UNIX like operating systems, while they generally have .exe on Windows.
+Along with above four types of files, while compiling a C program you can come across .a and .so, static and shared libraries respectively, but you would not normally deal with them directly.</p>
+</blockquote>
+
+<p>*Last Word :—</p>
+<blockquote>
+  <p>In this article I explained compilation and execution process steps and stages of C program in Linux using gcc . Various phases during compilation and execution process of a C program take place, such as, preprocessing, compilation, assembly, and linking. Hope you have enjoyed reading this article. Please write us if you have any suggestion/comment or come across any error on this page. Thanks for reading!</p>
+</blockquote>
+
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable.</p>
+
+
+
+            <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://yantrix.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+            
+            
+            
+            
+            
+            <div class="spacing"></div>
+            <!-- <h6>SHARE:</h6>
+            <p class="share">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-tumblr"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>		 		
+            </p> -->
+        </div><! --/col-lg-8 -->
+        
+        <div class="col-lg-4">
+   <!--  <h4>Search</h4>
+    <div class="hline"></div>
+        <p>
+            <br/>
+            <input type="text" class="form-control" placeholder="Search something">
+        </p>
+    <div class="spacing"></div> -->
+    <h4>Subscribe to our newsletter and stay Up-To-Date</h4>
+    <div class="hline"></div>
+   
+ <!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//github.us16.list-manage.com/subscribe/post?u=9d0fb0162bc2935c4c52cf99d&amp;id=6441e80107" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-NAME">Full Name  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="NAME" class="required" id="mce-NAME">
+</div>
+<div class="mc-field-group size1of2">
+	<label for="mce-ROLL">Roll No.  <span class="asterisk">*</span>
+</label>
+	<input type="number" name="ROLL" class="required" value="" id="mce-ROLL">
+</div>
+<div class="mc-field-group">
+	<label for="mce-BRANCH">Branch  <span class="asterisk">*</span>
+</label>
+	<select name="BRANCH" class="required" id="mce-BRANCH">
+	<option value=""></option>
+	<option value="CSE">CSE</option>
+<option value="IT">IT</option>
+<option value="ECE">ECE</option>
+<option value="ME">ME</option>
+
+	</select>
+</div>
+<div class="mc-field-group">
+	<label for="mce-YEAR">Year  <span class="asterisk">*</span>
+</label>
+	<select name="YEAR" class="required" id="mce-YEAR">
+	<option value=""></option>
+	<option value="1st">1st</option>
+<option value="2nd">2nd</option>
+<option value="3rd">3rd</option>
+<option value="4th">4th</option>
+
+	</select>
+</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div class="mc-field-group size1of2">
+	<label for="mce-CONTACT">Contact No.  <span class="asterisk">*</span>
+</label>
+	<input type="text" name="CONTACT" class="required" value="" id="mce-CONTACT">
+</div>
+<div class="mc-field-group">
+	<label for="mce-IMAGE">Image URL </label>
+	<input type="url" value="" name="IMAGE" class=" url" id="mce-IMAGE">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9d0fb0162bc2935c4c52cf99d_6441e80107" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='NAME';ftypes[1]='text';fnames[2]='ROLL';ftypes[2]='number';fnames[4]='BRANCH';ftypes[4]='dropdown';fnames[3]='YEAR';ftypes[3]='dropdown';fnames[0]='EMAIL';ftypes[0]='email';fnames[6]='CONTACT';ftypes[6]='phone';fnames[5]='IMAGE';ftypes[5]='imageurl';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+	
+	
+	
+   
+   
+   
+   
+   
+    <div class="spacing"></div>
+    <h4>Categories</h4>
+    <div class="hline"></div>
+    
+        <p>
+            <a href="/category/#blog"><i class="fa fa-angle-right"></i> Blog</a>
+            <span class="badge badge-theme pull-right">2</span>
+        </p>
+    
+        <p>
+            <a href="/category/#C"><i class="fa fa-angle-right"></i> C</a>
+            <span class="badge badge-theme pull-right">1</span>
+        </p>
+    
+        <p>
+            <a href="/category/#Electronics"><i class="fa fa-angle-right"></i> Electronics</a>
+            <span class="badge badge-theme pull-right">1</span>
+        </p>
+    
+        <p>
+            <a href="/category/#Sensors"><i class="fa fa-angle-right"></i> Sensors</a>
+            <span class="badge badge-theme pull-right">1</span>
+        </p>
+    
+        <p>
+            <a href="/category/#Robotics"><i class="fa fa-angle-right"></i> Robotics</a>
+            <span class="badge badge-theme pull-right">1</span>
+        </p>
+    
+
+    <div class="spacing"></div>
+
+    <h4>Recent Posts</h4>
+    <div class="hline"></div>
+        <ul class="popular-posts">
+            
+                <li>
+                    <a href="/blog/electronics/sensors/robotics/Infrared-Remote-control-home-appliance"><img src="/assets/img/blog/thumbs/thumb02.jpg" alt="Popular Post"></a>
+                    <p><a href="/blog/electronics/sensors/robotics/Infrared-Remote-control-home-appliance">Infra-Red Remote Control Home Appliances</a></p>
+                <em>Posted on 21 Aug 2017</em>
+            </li>
+            
+                <li>
+                    <a href="/blog/c/All-about-compiling-and-running-C-programs-on-linux"><img src="/assets/img/blog/thumbs/thumb03.jpg" alt="Popular Post"></a>
+                    <p><a href="/blog/c/All-about-compiling-and-running-C-programs-on-linux">All About Compiling And Running C Programs On Linux</a></p>
+                <em>Posted on 19 Aug 2017</em>
+            </li>
+            
+        </ul>
+
+    <div class="spacing"></div>
+
+    <h4>Popular Tags</h4>
+    <div class="hline"></div>
+    <p>
+    
+            <a class="btn btn-theme" href="/category/#blog" role="button">Blog (2)</a>
+        
+            <a class="btn btn-theme" href="/category/#C" role="button">C (1)</a>
+        
+            <a class="btn btn-theme" href="/category/#Electronics" role="button">Electronics (1)</a>
+        
+            <a class="btn btn-theme" href="/category/#Sensors" role="button">Sensors (1)</a>
+        
+            <a class="btn btn-theme" href="/category/#Robotics" role="button">Robotics (1)</a>
+        
+    </p>
+</div>
+
+
+    </div><! --/row -->
+</div><! --/container -->
+
+
+
+        <div id="footerwrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h4>About</h4>
+                <div class="hline-w"></div>
+                <p>YANTRIX is the official technical Club of Punjab University SSG REGIONAL CENTER,Hoshiarpur.</p>
+            </div>
+            <div class="col-lg-4">
+                <h4>Social Links</h4>
+                <div class="hline-w"></div>
+                <p>
+                    
+                        <a href="https://github.com/pussgrc/" class="btn-social btn-outline">
+                          <i class="fa fa-github" aria-hidden="true"></i>
+                          <span class="sr-only">github</span>
+                        </a>
+                    
+                        <a href="https://www.facebook.com/yantrixUIETH/" class="btn-social btn-outline">
+                          <i class="fa fa-facebook" aria-hidden="true"></i>
+                          <span class="sr-only">facebook</span>
+                        </a>
+                    
+                        <a href="" class="btn-social btn-outline">
+                          <i class="fa fa-twitter" aria-hidden="true"></i>
+                          <span class="sr-only">twitter</span>
+                        </a>
+                    
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h4>Our Bunker</h4>
+                <div class="hline-w"></div>
+                <p>
+                    
+                        PUSSGRC, UNA ROAD, BAJWARA. <br>
+                    
+                        HOSHIARPUR, 146023 <br>
+                    
+                        PUNJAB,INDIA. <br>
+                    
+                </p>
+            </div>
+        </div><! --/row -->
+        <center>
+            <h4 style="color:white;"><a style="color:white;" href="http://www.platform.net.in" target="_blank">
+                 <img src="/assets/platform logo.png" alt="platform logo" class="img img-responsive" style="margin-bottom:2px;"/>Platform &copy; Web-Development</a></h4> 
+        </center>
+    </div><! --/container -->
+</div><! --/footerwrap -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/retina-1.1.0.js"></script>
+<script src="/assets/js/jquery.hoverdir.js"></script>
+<script src="/assets/js/jquery.hoverex.min.js"></script>
+<script src="/assets/js/jquery.prettyPhoto.js"></script>
+<script src="/assets/js/jquery.isotope.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104964578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script>
+// Portfolio
+(function($) {
+	"use strict";
+	var $container = $('.portfolio'),
+		$items = $container.find('.portfolio-item'),
+		portfolioLayout = 'fitRows';
+		
+		if( $container.hasClass('portfolio-centered') ) {
+			portfolioLayout = 'masonry';
+		}
+				
+		$container.isotope({
+			filter: '*',
+			animationEngine: 'best-available',
+			layoutMode: portfolioLayout,
+			animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		},
+		masonry: {
+		}
+		}, refreshWaypoints());
+		
+		function refreshWaypoints() {
+			setTimeout(function() {
+			}, 1000);   
+		}
+				
+		$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+		});
+		
+		function getColumnNumber() { 
+			var winWidth = $(window).width(), 
+			columnNumber = 1;
+		
+			if (winWidth > 1200) {
+				columnNumber = 5;
+			} else if (winWidth > 950) {
+				columnNumber = 4;
+			} else if (winWidth > 600) {
+				columnNumber = 3;
+			} else if (winWidth > 400) {
+				columnNumber = 2;
+			} else if (winWidth > 250) {
+				columnNumber = 1;
+			}
+				return columnNumber;
+			}       
+			
+			function setColumns() {
+				var winWidth = $(window).width(), 
+				columnNumber = getColumnNumber(), 
+				itemWidth = Math.floor(winWidth / columnNumber);
+				
+				$container.find('.portfolio-item').each(function() { 
+					$(this).css( { 
+					width : itemWidth + 'px' 
+				});
+			});
+		}
+		
+		function setPortfolio() { 
+			setColumns();
+			$container.isotope('reLayout');
+		}
+			
+		$container.imagesLoaded(function () { 
+			setPortfolio();
+		});
+		
+		$(window).on('resize', function () { 
+		setPortfolio();          
+	});
+})(jQuery);
+</script>
+        
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59999003ba083d6f"></script> 
+       
+        
+    </body>
+</html>

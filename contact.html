@@ -1,0 +1,68 @@
+---
+layout: contact
+title: Contact
+permalink: /contact/
+---
+
+<div id="contactwrap"></div>
+<div id="map" style="padding:5px;"></div>
+<div class="container mtb">
+    <div class="row">
+        <div class="col-lg-8">
+            <h4>Just Get In Touch!</h4>
+            <div class="hline"></div>
+                <p>{{ site.about }}</p>
+                <form role="form" action="https://formspree.io/Yantrix.pussgrc@gmail.com" method="POST">
+                  <div class="form-group">
+                    <label for="InputName1">Your Name</label>
+                    <input type="text" class="form-control" id="exampleInputName1" name="Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="InputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="Reply To">
+                  </div>
+                  <div class="form-group">
+                    <label for="InputSubject1">Subject</label>
+                    <input type="text" class="form-control" id="exampleInputSubject1" name="Subject">
+                  </div>
+                  <div class="form-group">
+                    <label for="message1">Message</label>
+                    <textarea class="form-control" id="message1" name="message" rows="3"></textarea>
+                  </div>
+                  <input type="submit" class="btn btn-theme"></input>
+                </form>
+        </div><! --/col-lg-8 -->
+
+        <div class="col-lg-4">
+            <h4>Our Address</h4>
+            <div class="hline"></div>
+                <p>
+                    {% for line in site.address.first.lines %}
+                        {{ line }} <br>
+                    {% endfor %}
+                </p>
+                <p>
+                    Email: {{ site.email }}<br/>
+                    Tel: {{ site.tel }}
+                </p>
+                <p>For any Query or Suggestion regarding Web Technology Email us:</p>
+            <p>&nbsp;&nbsp;&nbsp;support@platform.net.in</p>
+        </div>
+    </div><! --/row -->
+<script>
+      function initMap() {
+        var yantrix = {lat: 31.517834, lng: 75.970223};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 9,
+          center: yantrix
+        });
+        var marker = new google.maps.Marker({
+          position: yantrix,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8KGclvFG15DnPplgs7uzhEPpE87CbqXk&callback=initMap">
+    </script>
+</div><! --/container -->
