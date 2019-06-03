@@ -42,13 +42,13 @@ social:
     url:
 
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
-address: 
+address:
   - lines:
     - PUSSGRC, UNA ROAD, BAJWARA.
     -     HOSHIARPUR, 146023
     -         PUNJAB,INDIA.
-email: "Yantrix.pussgrc@gmail.com"
-tel: "9631560280"
+email: "support@platform.net.in"
+tel: "(+91)9631560280"
 
 
 ### GENERAL DATA FOR VARIOUS LOCATIONS ###
@@ -70,7 +70,7 @@ members:
         url: https://in.linkedin.com/in/dilip-kumar-sharma-a837b2134
   - name: CHETAN MALHOTRA
     position: CORE MEMBER
-    text: MICROCONTROLLER, MICROPROCESSOR 
+    text: MICROCONTROLLER, MICROPROCESSOR
     img: team02.jpg
     social:
       - title: envelope #use for email address
@@ -98,7 +98,7 @@ clients:
     img: client04.png
 
 # Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
-about: "YANTRIX is the official technical Club of Punjab University SSG REGIONAL CENTER,Hoshiarpur."
+about: "NGO-INCUBATOR is a platform that provides collaborating oppurtunities and helping hand."
 
 # Testimonial content. Shown on Home and About page.
 testimonial:

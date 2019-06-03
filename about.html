@@ -5,17 +5,133 @@ permalink: /about/
 ---
 
 <div class="container mtb">
-    <div class="row">
-        <div class="col-lg-6">
-            <img class="img-responsive" src="{{ "/assets/img/about.jpg" | prepend: site.baseurl }}" alt="">
-        </div>
-        <div class="col-lg-6">
-            <h3>More About YANTRIX</h3><hr/>
-            <p>YANTRIX is the official technical club of PANJAB UNIVERSITY SSG REGIONAL CENTRE.</p>
-            <p> We create a platform which allows students to gain assistance and mentorship to enhance their technical skills.
-                Under the aegis of STAB, we carry forward our vision of propagating the enthusiasm for coding in our institute and especially amongst freshmen.</p>
-            <p>We believe that every student here at YANTRIX should have an opportunity to learn how to code and develop a passion for it.
-                The secret of getting ahead is getting started and we aim to provide every student with the right start.</p>
-        </div>
-    </div><! --/row -->
-</div><! --/container -->
+<div class="row">
+  <div class="col-lg-3">
+    <div class="gap"><br><br><br></div>
+    <ul style="list-style: none;" class="nav flex-column" id="myTab1">
+
+      <li class="nav-item"><a href="#vision NIa" class="nav-link active" onclick="visionFunctionality()">Vision</a></li>
+      <li class="nav-item"><a href="#mission NIa" class="nav-link" onclick="missionFunctionality()">Mission</a></li>
+      <li class="nav-item"><a href="#belief NIa" class="nav-link" onclick="beliefFunctionality()">Belief</a></li>
+      <li class="nav-item"><a href="#collab NIa" class="nav-link" onclick="collabFunctionality()">Collaboration with NGOs</a></li>
+      <li class="nav-item"><a href="#funding NIa" class="nav-link" onclick="fundingFunctionality()">Donations</a></li>
+      </ul>
+
+      <style>
+        .NIa:active{
+          background-color: #a6a5a4;
+          border-radius: 5px;
+          padding: 5px inherit 5px 5px;
+          border: 1px solid #a6a5a4;
+        }
+        </style>
+
+  </div>
+
+<div class="col-lg-9" >
+<div class="visibility" id="vision" style="display:block;">
+  <div class="gap"><br><br></div>
+<div class="container" style="width: 75%;">
+<div class="jumbotron">
+<h2>VISION</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+  </div>
+</div>
+</div>
+
+<div class="visibility active" id="mission" style="display:none;">
+  <div class="gap"><br><br></div>
+<div class="container" style="width: 75%;">
+<div class="jumbotron">
+<h2>MISSION</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+</div>
+</div>
+</div>
+
+<div class="visibility" id="belief" style="display:none;">
+  <div class="gap"><br><br></div>
+<div class="container" style="width: 75%;">
+<div class="jumbotron">
+<h2>BELIEF</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+</div>
+</div>
+</div>
+
+<div id="collab" style="display:none;">
+  <div class="gap"><br><br></div>
+<div class="container" style="width: 75%;">
+<div class="jumbotron">
+<h2>COLLABORATIONS</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+</div>
+</div>
+</div>
+
+<div class="visibility" id="funding" style="display:none;">
+  <div class="gap"><br><br></div>
+<div class="container" style="width: 75%;">
+<div class="jumbotron">
+<h2>FUNDING</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+
+  function collabFunctionality() {
+    var lefts = document.querySelectorAll("#vision, #mission, #belief, #funding");
+    document.getElementById("collab").style.display = "block";
+    var length = lefts.length;
+    for(var i=0; i<length; i++) {
+      lefts[i].style.display = "none";
+  }
+  }
+
+  function visionFunctionality() {
+    var lefts = document.querySelectorAll("#collab, #mission, #belief, #funding");
+    document.getElementById("vision").style.display = "block";
+    var length = lefts.length;
+    for(var i=0; i<length; i++) {
+      lefts[i].style.display = "none";
+  }
+}
+
+  function missionFunctionality() {
+    var lefts = document.querySelectorAll("#collab, #vision, #belief, #funding");
+    document.getElementById("mission").style.display = "block";
+    var length = lefts.length;
+    for(var i=0; i<length; i++) {
+      lefts[i].style.display = "none";
+  }
+}
+
+  function beliefFunctionality() {
+    var lefts = document.querySelectorAll("#collab, #vision, #mission, #funding");
+    document.getElementById("belief").style.display = "block";
+    var length = lefts.length;
+    for(var i=0; i<length; i++) {
+      lefts[i].style.display = "none";
+  }
+}
+
+  function fundingFunctionality() {
+    var lefts = document.querySelectorAll("#collab, #vision, #mission, #belief");
+    document.getElementById("funding").style.display = "block";
+    var length = lefts.length;
+    for(var i=0; i<length; i++) {
+      lefts[i].style.display = "none";
+  }
+  }
+
+ </script>
